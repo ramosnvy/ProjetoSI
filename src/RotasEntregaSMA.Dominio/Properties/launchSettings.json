@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RotasEntregaSMA.Dominio": {
+      "commandName": "Project"
+    },
+    "Perfil 1": {
+      "commandName": "Executable"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>SMA - Otimizacao de Rotas de Entrega Urbana</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Otimizacao de Rotas de Entrega Urbana com Sistemas Multiagentes</h1>
+    <p class="subtitulo">MVP - Contract Net Protocol + ACO &middot; UTFPR &middot; Sistemas Inteligentes Aplicados</p>
+  </header>
+
+  <main>
+    <section class="painel-controle">
+      <h2>Controle da Simulacao</h2>
+      <div class="controles">
+        <label>Entregadores
+          <input type="number" id="cfgEntregadores" value="4" min="1" max="10" />
+        </label>
+        <label>Grade (km)
+          <input type="number" id="cfgGrade" value="20" min="5" max="60" />
+        </label>
+        <label>Duracao simulada (min)
+          <input type="number" id="cfgDuracao" value="30" min="5" max="240" />
+        </label>
+        <label>Aceleracao
+          <input type="number" id="cfgAceleracao" value="200" min="1" max="1000" />
+        </label>
+        <label>Intervalo pedidos (s sim.)
+          <input type="number" id="cfgIntervalo" value="30" min="5" max="300" />
+        </label>
+        <label>Tempo limite pedido (min sim.)
+          <input type="number" id="cfgTempoLimite" value="90" min="5" max="240" />
+        </label>
+        <button id="btnIniciar">Iniciar Simulacao</button>
+        <button id="btnParar" disabled>Parar e Comparar</button>
+      </div>
+      <p id="status" class="status">Simulacao parada.</p>
+    </section>
+
+    <section class="area-principal">
+      <div class="mapa-container">
+        <canvas id="mapa" width="720" height="720"></canvas>
+      </div>
+
+      <div class="lateral">
+        <h2>Metricas em tempo real</h2>
+        <ul id="metricas" class="metricas">
+          <li>Pedidos gerados: <span id="mTotal">0</span></li>
+          <li>Entregues: <span id="mEntregues">0</span></li>
+          <li>Pendentes: <span id="mPendentes">0</span></li>
+          <li>Sem alocacao: <span id="mSemAlocacao">0</span></li>
+          <li>Distancia total (SMA): <span id="mDistancia">0</span> km</li>
+        </ul>
+
+        <h2>Legenda</h2>
+        <ul class="legenda">
+          <li><span class="marcador centro"></span> Centro de distribuicao (Agente Despachante)</li>
+          <li><span class="marcador entregador"></span> Agente Entregador</li>
+          <li><span class="marcador pedido"></span> Pedido pendente / rota</li>
+        </ul>
+
+        <h2>Eventos (Contract Net Protocol)</h2>
+        <div id="log" class="log"></div>
+      </div>
+    </section>
+
+    <section id="comparativo" class="comparativo oculto">
+      <h2>Comparativo: SMA dinamico vs Solucao Estatica de Referencia (objetivo d)</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>SMA (Contract Net, online)</th><th>Estatica (lote completo, sem realocacao)</th></tr>
+        </thead>
+        <tbody id="tabelaComparativo"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

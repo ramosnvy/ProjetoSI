@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>RotasEntregaSMA.Simulacao</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RotasEntregaSMA.Dominio\RotasEntregaSMA.Dominio.csproj" />
+    <ProjectReference Include="..\RotasEntregaSMA.Agentes\RotasEntregaSMA.Agentes.csproj" />
+  </ItemGroup>
+</Project>

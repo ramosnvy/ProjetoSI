@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>RotasEntregaSMA.Api</RootNamespace>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RotasEntregaSMA.Dominio\RotasEntregaSMA.Dominio.csproj" />
+    <ProjectReference Include="..\RotasEntregaSMA.Agentes\RotasEntregaSMA.Agentes.csproj" />
+    <ProjectReference Include="..\RotasEntregaSMA.Simulacao\RotasEntregaSMA.Simulacao.csproj" />
+  </ItemGroup>
+</Project>

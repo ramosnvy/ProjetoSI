@@ -1,0 +1,52 @@
+* { box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: #0f1420;
+  color: #e6e9f0;
+  margin: 0;
+  padding: 0 24px 40px;
+}
+header { padding: 24px 0 8px; }
+header h1 { margin: 0; font-size: 1.4rem; }
+.subtitulo { color: #8b93a7; margin: 4px 0 0; font-size: 0.9rem; }
+
+.painel-controle {
+  background: #171d2b;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+.controles { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+.controles label { display: flex; flex-direction: column; font-size: 0.8rem; color: #a7afc2; gap: 4px; }
+.controles input { background: #0f1420; border: 1px solid #2b3450; color: #e6e9f0; border-radius: 6px; padding: 6px 8px; width: 90px; }
+button {
+  background: #3b6ef0; color: white; border: none; border-radius: 6px;
+  padding: 9px 16px; font-size: 0.9rem; cursor: pointer;
+}
+button:disabled { background: #333950; cursor: not-allowed; }
+button:hover:not(:disabled) { background: #5b86f5; }
+.status { margin: 10px 0 0; color: #8b93a7; font-size: 0.85rem; }
+
+.area-principal { display: flex; gap: 20px; align-items: flex-start; }
+.mapa-container { background: #171d2b; border-radius: 10px; padding: 12px; }
+#mapa { background: #0b0f18; border-radius: 6px; display: block; }
+
+.lateral { flex: 1; min-width: 280px; }
+.lateral h2 { font-size: 1rem; margin: 18px 0 8px; }
+.metricas, .legenda { list-style: none; padding: 0; margin: 0; }
+.metricas li, .legenda li { font-size: 0.88rem; padding: 4px 0; color: #c3c8d6; }
+.metricas span { color: #fff; font-weight: 600; }
+
+.marcador { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; }
+.marcador.centro { background: #f2b705; }
+.marcador.entregador { background: #3bd67b; }
+.marcador.pedido { background: #e0455f; }
+
+.log { background: #0b0f18; border-radius: 6px; padding: 8px 10px; height: 220px; overflow-y: auto; font-size: 0.78rem; color: #a7afc2; }
+.log div { padding: 2px 0; border-bottom: 1px solid #1c2338; }
+
+.comparativo { margin-top: 24px; background: #171d2b; border-radius: 10px; padding: 16px 20px; }
+.comparativo.oculto { display: none; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #2b3450; font-size: 0.88rem; }
+th { color: #8b93a7; font-weight: 500; }
